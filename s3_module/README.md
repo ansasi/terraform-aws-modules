@@ -50,4 +50,4 @@ module "s3" {
 
 ## Authors
 
-Module managed by Ángel Sánchez Sierra - [(angel.sanchez@datacentric.es)](mailto:angel.sanchez@datacentric.es)
+Module managed by [Ángel Sánchez Sierra](https://github.com/ansasi)
