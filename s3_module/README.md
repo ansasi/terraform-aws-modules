@@ -8,7 +8,7 @@ It can receive a list of objects to be created in the bucket.
 
 ```hcl
 module "s3" {
-  source = "../../Modules/glue_module"
+  source = "github.com/ansasi/terraform-aws-modules/s3_module"
 
   bucket_name = "my-bucket"
   bucket_policy = "my-bucket-policy"
