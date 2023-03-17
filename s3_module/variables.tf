@@ -1,31 +1,37 @@
 variable "bucket" {
-    description = "The name of the bucket. If omitted, Terraform will assign a random, unique name."
-    type        = string
+  description = "The name of the bucket. If omitted, Terraform will assign a random, unique name."
+  type        = string
+}
+
+variable "use_existing_bucket" {
+  description = "Use existing bucket or create a new one."
+  type        = bool
+  default     = false
 }
 
 variable "tags" {
-    description = "A mapping of tags that identify the bucket."
-    type        = map(string)
-    default     = {}
+  description = "A mapping of tags that identify the bucket."
+  type        = map(string)
+  default     = {}
 }
 
 variable "force_destroy" {
-    description = "A boolean that indicates all objects should be deleted from the bucket so that the bucket can be destroyed without error. These objects are not recoverable."
-    type        = bool
-    default     = false  
+  description = "A boolean that indicates all objects should be deleted from the bucket so that the bucket can be destroyed without error. These objects are not recoverable."
+  type        = bool
+  default     = false
 }
 
 variable "policy" {
-    description = "The bucket policy as a JSON document."
-    type        = string
-    default     = ""
+  description = "The bucket policy as a JSON document."
+  type        = string
+  default     = ""
 }
 
 variable "object_list" {
-    description = "A list of objects to be created in the bucket."
-    type        = list(object({
-        key    = string
-        source = string
-    }))
-    default     = []
+  description = "A list of objects to be created in the bucket."
+  type = list(object({
+    key    = string
+    source = string
+  }))
+  default = []
 }

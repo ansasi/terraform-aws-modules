@@ -11,6 +11,7 @@ module "s3" {
   source = "github.com/ansasi/terraform-aws-modules/s3_module"
 
   bucket_name = "my-bucket"
+  use_existing_bucket = false
   bucket_policy = "my-bucket-policy"
   bucket_objects = [
     {
@@ -34,6 +35,7 @@ module "s3" {
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | bucket\_name | The name of the bucket. If omitted, Terraform will assign a random, unique name. | `string` | n/a | yes |
+| use\_existing\_bucket | If set to true, the module will use an existing bucket and will not create one. | `bool` | `false` | no |
 | tags | A mapping of tags that identify the bucket. | `map(string)` | `{}` | no |
 | force\_destroy | A boolean that indicates all objects should be deleted from the bucket so that the bucket can be destroyed without error. These objects are not recoverable. | `bool` | `false` | no |
 | bucket\_policy | The bucket policy as a JSON document. | `string` | `""` | no |
@@ -50,4 +52,4 @@ module "s3" {
 
 ## Authors
 
-Module managed by [Ángel Sánchez Sierra](https://github.com/ansasi)
+Module created and managed by [Ángel Sánchez Sierra](https://github.com/ansasi)
